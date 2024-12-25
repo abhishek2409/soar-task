@@ -4,5 +4,5 @@
 
 
 body {
-    @apply font-sans;
+    font-family: "Inter", serif;
 }
