@@ -11,6 +11,7 @@ export default {
     borderGray: '#E6EFF5',
   },
   fontSize: {
+    'units-unit-13': '0.8125rem',
     'units-unit-18': '1.125rem',
     'units-unit-20': '1.25rem',
     'units-unit-22': '1.375rem',
@@ -22,8 +23,10 @@ export default {
     'units-unit-34': '2.125rem',
     'units-unit-36': '2.25rem',
     'units-unit-38': '2.375rem',
+    'units-unit-40': '2.5rem',
   },
   spacing: {
+    'units-unit-13': '0.8125rem',
     'units-unit-18': '1.125rem',
     'units-unit-20': '1.25rem',
     'units-unit-22': '1.375rem',
@@ -35,6 +38,7 @@ export default {
     'units-unit-34': '2.125rem',
     'units-unit-36': '2.25rem',
     'units-unit-38': '2.375rem',
+    'units-unit-40': '2.5rem',
   },
   fontFamily: {
     sans: ['Inter', 'sans-serif'],

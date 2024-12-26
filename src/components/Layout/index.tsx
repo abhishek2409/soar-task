@@ -1,6 +1,6 @@
 import Sidebar from '../Sidebar';
 import Navbar from '../Navbar';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import DashboardIcon from '@/assets/svgs/home.svg?react';
 import TransactionIcon from '@/assets/svgs/transaction.svg?react';
 import AccountIcon from '@/assets/svgs/user.svg?react';
@@ -11,6 +11,7 @@ import ServicesIcon from '@/assets/svgs/service.svg?react';
 import PrivilegeIcon from '@/assets/svgs/privilege.svg?react';
 import SettingIcon from '@/assets/svgs/setting.svg?react';
 import LogoIcon from '@/assets/svgs/logo.svg?react';
+import { getPageTitle } from '@/utils';
 
 const menuItems = [
   {
@@ -67,11 +68,14 @@ const logo = {
 };
 
 const Layout = () => {
+  const location = useLocation();
+  const title = getPageTitle(location.pathname);
+
   return (
     <div className="flex h-screen">
       <Sidebar menuItems={menuItems} logo={logo} />
       <div className="flex flex-col flex-1">
-        <Navbar />
+        <Navbar title={title} />
         <main className="flex-1 p-4 bg-primaryBG">
           <Outlet />
         </main>
