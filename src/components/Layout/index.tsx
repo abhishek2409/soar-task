@@ -74,9 +74,9 @@ const Layout = () => {
   return (
     <div className="flex h-screen">
       <Sidebar menuItems={menuItems} logo={logo} />
-      <div className="flex flex-col flex-1">
+      <div className="flex flex-col flex-1 ml-[250px]">
         <Navbar title={title} />
-        <main className="flex-1 p-4 bg-primaryBG">
+        <main className="flex-1 p-4 bg-primaryBG py-units-unit-24 px-units-unit-40">
           <Outlet />
         </main>
       </div>
