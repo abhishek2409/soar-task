@@ -25,7 +25,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
         <div className=" px-units-unit-30 py-units-unit-24 ">
           <NavLink
             to={logo.link}
-            className="flex items-center text-units-unit-24 font-bold text-heading gap-5 py-units-unit-13 pl-4"
+            className="flex items-center text-units-unit-24 font-bold text-primaryText gap-5 py-units-unit-13 pl-4"
           >
             <span>{logo.icon}</span> <span>{logo.text}</span>
           </NavLink>
