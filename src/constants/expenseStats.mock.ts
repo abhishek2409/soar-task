@@ -1,4 +1,4 @@
-import { ExpenseStatsData } from '@/features/ExpenseStatistics/types';
+import { ExpenseStatsData } from '@/features/ExpenseStatistics';
 import { v4 as uuid } from 'uuid';
 
 export const expenseStatsMockresponse: ExpenseStatsData[] = [

@@ -2,7 +2,7 @@ import {
   TransactionData,
   TransactionProvider,
   TransactionType,
-} from '@/features/Transactions/types';
+} from '@/features/Transactions';
 import { v4 as uuid } from 'uuid';
 
 export const transactionMockResponse: TransactionData[] = [

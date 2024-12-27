@@ -8,6 +8,7 @@ import {
   weeklyActivityMockResponse,
 } from '@/constants';
 import { beneficiariesMockResponse } from '@/constants/beneficiaries.mock';
+import { balanceHistoryMockResponse } from '@/constants/balanceHistory.mock';
 
 const mock = new MockAdapter(axiosInstance);
 
@@ -32,6 +33,11 @@ mock
   .onGet('/beneficiaries')
   .withDelayInMs(1000)
   .reply(200, beneficiariesMockResponse);
+
+mock
+  .onGet('/balance-history')
+  .withDelayInMs(1000)
+  .reply(200, balanceHistoryMockResponse);
 
 export const enableMock = () => {
   debugLog('Mock API enabled.');

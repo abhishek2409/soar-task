@@ -1,4 +1,4 @@
-import { BeneficiaryData } from '@/features/QuickTransfer/types';
+import { BeneficiaryData } from '@/features/QuickTransfer';
 import Avatar1Icon from '@/assets/images/avatar2.png';
 import Avatar2Icon from '@/assets/images/avatar3.png';
 import Avatar3Icon from '@/assets/images/avatar4.png';

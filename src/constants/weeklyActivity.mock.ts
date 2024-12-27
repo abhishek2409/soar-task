@@ -1,4 +1,4 @@
-import { WeeklyActivityData } from '@/features/WeeklyActivity/types';
+import { WeeklyActivityData } from '@/features/WeeklyActivity';
 import { v4 as uuid } from 'uuid';
 export const weeklyActivityMockResponse: WeeklyActivityData[] = [
   {

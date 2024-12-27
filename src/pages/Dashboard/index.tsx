@@ -1,6 +1,7 @@
-import { ExpenseStats } from '@/features/ExpenseStatistics/components';
+import { BalanceHistory } from '@/features/BalanceHistory';
+import { ExpenseStats } from '@/features/ExpenseStatistics';
 import { MyCardList } from '@/features/MyCards';
-import { QuickTransfer } from '@/features/QuickTransfer/components';
+import { QuickTransfer } from '@/features/QuickTransfer';
 import { TransactionList } from '@/features/Transactions';
 import { WeeklyActivity } from '@/features/WeeklyActivity';
 
@@ -27,7 +28,9 @@ const Dashboard = () => {
         <div className="w-2/5">
           <QuickTransfer />
         </div>
-        <div className="w-3/5">Balance History</div>
+        <div className="w-3/5">
+          <BalanceHistory />
+        </div>
       </div>
     </div>
   );
