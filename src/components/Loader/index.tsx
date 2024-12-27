@@ -36,12 +36,48 @@ const ListShimmer = () => {
   );
 };
 
+const ChartLoader = () => {
+  return (
+    <div
+      role="status"
+      className="max-w-full animate-pulse dark:border-gray-700"
+    >
+      <div className="flex items-baseline mt-4">
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 dark:bg-gray-700"></div>
+        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+      </div>
+    </div>
+  );
+};
+
 const Loader: FC<LoaderProps> = ({ type }) => {
   switch (type) {
     case LoaderType.CARD_SHIMMER:
       return <CardShimmer />;
     case LoaderType.LIST_SHIMMER:
       return <ListShimmer />;
+    case LoaderType.CHART_SHIMMER:
+      return <ChartLoader />;
     default:
       return <></>;
   }

@@ -1,5 +1,6 @@
 import { MyCardList } from '@/features/MyCards';
 import { TransactionList } from '@/features/Transactions';
+import { WeeklyActivity } from '@/features/WeeklyActivity';
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,12 @@ const Dashboard = () => {
         <div className="w-1/3">
           <TransactionList />
         </div>
+      </div>
+      <div className="flex w-full gap-x-units-unit-30">
+        <div className="w-2/3">
+          <WeeklyActivity />
+        </div>
+        <div className="w-1/3">{/* Expense Stats */}</div>
       </div>
     </div>
   );
