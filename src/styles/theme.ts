@@ -14,6 +14,8 @@ export default {
     borderGray: '#E6EFF5',
     borderDarkGray: '#DFEAF2',
     contentSubtitle: '#718EBF',
+    inputBG: '#EDF1F7',
+    shadowColor: '#E7E4E8',
   },
   fontSize: {
     'units-unit-12': '0.75rem',
