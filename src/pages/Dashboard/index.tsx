@@ -1,3 +1,4 @@
+import { ExpenseStats } from '@/features/ExpenseStatistics/components';
 import { MyCardList } from '@/features/MyCards';
 import { TransactionList } from '@/features/Transactions';
 import { WeeklyActivity } from '@/features/WeeklyActivity';
@@ -17,7 +18,9 @@ const Dashboard = () => {
         <div className="w-2/3">
           <WeeklyActivity />
         </div>
-        <div className="w-1/3">{/* Expense Stats */}</div>
+        <div className="w-1/3">
+          <ExpenseStats />
+        </div>
       </div>
     </div>
   );

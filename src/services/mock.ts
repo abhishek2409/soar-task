@@ -2,6 +2,7 @@ import MockAdapter from 'axios-mock-adapter';
 import axiosInstance from './axios';
 import { debugLog } from './logger';
 import {
+  expenseStatsMockresponse,
   myCardsMockResponse,
   transactionMockResponse,
   weeklyActivityMockResponse,
@@ -20,6 +21,11 @@ mock
   .onGet('/weekly-activity')
   .withDelayInMs(1000)
   .reply(200, weeklyActivityMockResponse);
+
+mock
+  .onGet('/expense-stats')
+  .withDelayInMs(1000)
+  .reply(200, expenseStatsMockresponse);
 
 export const enableMock = () => {
   debugLog('Mock API enabled.');

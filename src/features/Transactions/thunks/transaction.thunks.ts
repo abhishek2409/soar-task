@@ -9,7 +9,9 @@ export const fetchMyTransactions = createAsyncThunk<TransactionData[]>(
       const response = await axiosInstance.get('/transactions');
       return response.data;
     } catch (error: any) {
-      return rejectWithValue(error.response?.data || 'Failed to fetch cards');
+      return rejectWithValue(
+        error.response?.data || 'Failed to fetch transaction'
+      );
     }
   }
 );

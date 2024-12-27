@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import myCardReducer from '@/features/MyCards/slice/mycard.slice';
 import transactionReducer from '@/features/Transactions/slice/transaction.slice';
 import weeklyActivityReducer from '@/features/WeeklyActivity/slice/weeklyActivity.slice';
+import expenseStatsReducer from '@/features/ExpenseStatistics/slice/expenseStats.slice';
 import { useDispatch } from 'react-redux';
 
 const store = configureStore({
@@ -9,6 +10,7 @@ const store = configureStore({
     myCards: myCardReducer,
     transactions: transactionReducer,
     weeklyActivity: weeklyActivityReducer,
+    expenseStats: expenseStatsReducer,
   },
 });
 

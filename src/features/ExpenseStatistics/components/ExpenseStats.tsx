@@ -1,29 +1,27 @@
 import SectionTitle from '@/components/SectionTitle';
 import { RootState, useAppDispatch } from '@/store';
 import { useEffect } from 'react';
-import { fetchMyTransactions } from '../thunks/transaction.thunks';
 import { useSelector } from 'react-redux';
 import Loader, { LoaderType } from '@/components/Loader';
-import TransactionListItem from './TransactionListItem';
+import { fetchMyExpenses } from '../thunks';
+import ExpenseStatsPieChart from './ExpenseStatsPieChart';
 
-export const TransactionList = () => {
+export const ExpenseStats = () => {
   const { data, isLoading } = useSelector(
-    (state: RootState) => state.transactions
+    (state: RootState) => state.expenseStats
   );
   const dispatch = useAppDispatch();
   useEffect(() => {
-    if (!data) dispatch(fetchMyTransactions());
+    if (!data) dispatch(fetchMyExpenses());
   }, []);
   return (
     <div className="flex flex-col w-full  gap-y-5 h-full">
-      <SectionTitle title="Recent Transaction" />
+      <SectionTitle title="Expense Statistics" />
       {isLoading && <Loader type={LoaderType.LIST_SHIMMER} />}
 
       {!!data?.length && !isLoading && (
-        <div className="flex flex-col bg-white rounded-units-unit-25  p-units-unit-26 gap-y-units-unit-10 grow overflow-auto">
-          {data.map((transaction) => (
-            <TransactionListItem key={transaction.id} {...transaction} />
-          ))}
+        <div className="flex flex-col bg-white rounded-units-unit-25  p-units-unit-26 gap-y-units-unit-10  grow justify-center items-center">
+          <ExpenseStatsPieChart data={data} />
         </div>
       )}
     </div>

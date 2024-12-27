@@ -25,13 +25,10 @@ const CardShimmer = () => {
 
 const ListShimmer = () => {
   return (
-    <div
-      role="status"
-      className="max-w-sm p-4 border border-gray-200 rounded-units-unit-25 shadow animate-pulse md:p-6 bg-white"
-    >
-      <div className="h-20 rounded-units-unit-13 bg-gray-200  dark:bg-gray-700 mb-2.5"></div>
-      <div className="h-20 rounded-units-unit-13 bg-gray-200  dark:bg-gray-700 mb-2.5"></div>
-      <div className="h-20 rounded-units-unit-13 bg-gray-200  dark:bg-gray-700"></div>
+    <div role="status" className="max-w-sm  animate-pulse ">
+      <div className="h-16 rounded-units-unit-13 bg-gray-200  dark:bg-gray-700 mb-2.5"></div>
+      <div className="h-16 rounded-units-unit-13 bg-gray-200  dark:bg-gray-700 mb-2.5"></div>
+      <div className="h-16 rounded-units-unit-13 bg-gray-200  dark:bg-gray-700"></div>
     </div>
   );
 };

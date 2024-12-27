@@ -30,11 +30,13 @@ export const MyCardList = () => {
           <Loader type={LoaderType.CARD_SHIMMER} />
         </div>
       )}
-      <div className="flex flex-nowrap overflow-x-auto md:max-w-screen-md lg:max-w-screen-lg gap-x-units-unit-30 pb-units-unit-24">
-        {!!data?.length &&
-          !isLoading &&
-          data.map((card) => <MyCardItem key={card.id} {...card} />)}
-      </div>
+      {!!data?.length && !isLoading && (
+        <div className="flex flex-nowrap overflow-x-auto md:max-w-screen-md lg:max-w-screen-lg gap-x-units-unit-30 pb-units-unit-24">
+          {data.map((card) => (
+            <MyCardItem key={card.id} {...card} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

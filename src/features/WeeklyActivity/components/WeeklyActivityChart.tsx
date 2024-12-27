@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { FC } from 'react';
 import { WeeklyActivityData } from '../types';
 import {
   Chart as ChartJS,
@@ -53,6 +53,9 @@ const options:
       },
       align: 'end',
     },
+    datalabels: {
+      display: false,
+    },
   },
   scales: {
     x: {
@@ -72,7 +75,6 @@ interface WeeklyActivityChartProps {
   data: WeeklyActivityData[];
 }
 const WeeklyActivityChart: FC<WeeklyActivityChartProps> = ({ data }) => {
-  //   const chartData = useMemo(() => getModifiedChartData(data), [data]);
   const chartData = getModifiedChartData(data);
   return <Bar options={options} data={chartData} />;
 };
