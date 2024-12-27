@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import myCardReducer from '@/features/MyCards/slice/mycard.slice';
+import transactionReducer from '@/features/Transactions/slice/transaction.slice';
 import { useDispatch } from 'react-redux';
 
 const store = configureStore({
   reducer: {
     myCards: myCardReducer,
+    transactions: transactionReducer,
   },
 });
 

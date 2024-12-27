@@ -14,7 +14,7 @@ const MyCardItem: FC<CardData> = (data) => {
         'flex flex-col w-[350px] rounded-units-unit-25 flex-shrink-0 border-borderGray border  gap-y-units-unit-32',
 
         theme === CardTheme.DARK
-          ? 'bg-gradient-to-b from-graidientDark to-gradientLight'
+          ? 'bg-gradient-to-br from-gradientLight to-gradientDark'
           : 'bg-white'
       )}
     >

@@ -5,6 +5,7 @@ import Loader, { LoaderType } from '@/components/Loader';
 import { Link } from 'react-router-dom';
 import MyCardItem from './MyCardItem';
 import { useSelector } from 'react-redux';
+import SectionTitle from '@/components/SectionTitle';
 
 export const MyCardList = () => {
   const { data, isLoading } = useSelector((state: RootState) => state.myCards);
@@ -16,9 +17,7 @@ export const MyCardList = () => {
   return (
     <div className="flex flex-col w-full  gap-y-5">
       <div className="flex justify-between items-center">
-        <h2 className="text-primaryText text-units-unit-22 font-semibold">
-          My Cards
-        </h2>
+        <SectionTitle title="My Cards" />
         <Link
           to="/all-cards"
           className="text-primaryText font-semibold text-units-unit-17"

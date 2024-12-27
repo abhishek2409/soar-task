@@ -1,4 +1,5 @@
 import { MyCardList } from '@/features/MyCards';
+import { TransactionList } from '@/features/Transactions';
 
 const Dashboard = () => {
   return (
@@ -7,7 +8,9 @@ const Dashboard = () => {
         <div className="w-2/3">
           <MyCardList />
         </div>
-        <div className="w-1/3">Transaction</div>
+        <div className="w-1/3">
+          <TransactionList />
+        </div>
       </div>
     </div>
   );
