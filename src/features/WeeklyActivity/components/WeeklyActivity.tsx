@@ -19,7 +19,7 @@ export const WeeklyActivity = () => {
       <SectionTitle title="Weekly Activity" />
       {isLoading && <Loader type={LoaderType.CHART_SHIMMER} />}
       {!isLoading && data && data.length > 0 && (
-        <div className="shaodow p-units-unit-26 bg-white rounded-units-unit-25">
+        <div className="md:shadow md:p-units-unit-26 bg-white rounded-units-unit-25">
           <WeeklyActivityChart data={data} />
         </div>
       )}

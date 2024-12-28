@@ -76,7 +76,7 @@ const Layout = () => {
       <Sidebar menuItems={menuItems} logo={logo} />
       <div className="flex flex-col flex-1 md:ml-[250px]">
         <Navbar title={title} />
-        <main className="flex-1 p-4 bg-primaryBG py-units-unit-24 px-units-unit-40">
+        <main className="flex-1 p-4 md:bg-primaryBG py-units-unit-24 px-units-unit-25 md:px-units-unit-40">
           <Outlet />
         </main>
       </div>

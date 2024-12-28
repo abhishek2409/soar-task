@@ -30,7 +30,7 @@ const CustomLink: FC<CustomLinkProps> = ({
       to={link}
       className={({ isActive }) =>
         clsx(
-          `relative font-medium text-units-unit-18 flex items-center p-2    hover:text-menuActive group  ${
+          `relative font-medium  flex items-center p-2    hover:text-menuActive group  ${
             isActive
               ? className?.active ?? 'text-menuActive '
               : className?.inactive ?? 'text-menuInactive '

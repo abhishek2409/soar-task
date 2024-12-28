@@ -11,18 +11,18 @@ const MyCardItem: FC<CardData> = (data) => {
   return (
     <div
       className={clsx(
-        'flex flex-col w-[350px] rounded-units-unit-25 flex-shrink-0 border-borderGray border  gap-y-units-unit-32',
+        'flex flex-col w-[350px] rounded-units-unit-25 flex-shrink-0 border-borderGray border gap-y-units-unit-20  md:gap-y-units-unit-32',
 
         theme === CardTheme.DARK
           ? 'bg-gradient-to-br from-gradientLight to-gradientDark'
           : 'bg-white'
       )}
     >
-      <div className="flex justify-between items-center p-units-unit-24">
+      <div className="flex justify-between items-center p-units-unit-20 md:p-units-unit-24">
         <div className="flex flex-col">
           <span
             className={clsx(
-              'text-contentSubtitle text-units-unit-12',
+              'text-contentSubtitle text-units-unit-11 md:text-units-unit-12',
               theme === CardTheme.DARK ? 'text-white' : ''
             )}
           >
@@ -30,7 +30,7 @@ const MyCardItem: FC<CardData> = (data) => {
           </span>
           <span
             className={clsx(
-              'text-primaryText text-units-unit-20 font-semibold',
+              'text-primaryText  md:text-units-unit-20 font-semibold',
               theme === CardTheme.DARK ? 'text-white' : ''
             )}
           >
@@ -38,13 +38,17 @@ const MyCardItem: FC<CardData> = (data) => {
           </span>
         </div>
 
-        {theme === CardTheme.DARK ? <ChipWhiteIcon /> : <ChipIcon />}
+        {theme === CardTheme.DARK ? (
+          <ChipWhiteIcon className="w-[29px] h-[29px] md:w-[34px] md:h-[34px]" />
+        ) : (
+          <ChipIcon className="w-[29px] h-[29px] md:w-[34px] md:h-[34px]" />
+        )}
       </div>
-      <div className="flex gap-x-units-unit-60 px-units-unit-24">
+      <div className="flex gap-x-units-unit-60 px-units-unit-20 md:px-units-unit-24">
         <div className="flex flex-col">
           <span
             className={clsx(
-              'text-contentSubtitle text-units-unit-12',
+              'text-contentSubtitle text-units-unit-11 md:text-units-unit-12',
               theme === CardTheme.DARK ? 'text-white' : ''
             )}
           >
@@ -52,7 +56,7 @@ const MyCardItem: FC<CardData> = (data) => {
           </span>
           <span
             className={clsx(
-              'text-primaryText text-units-unit-15 font-semibold',
+              'text-primaryText text-units-unit-13 md:text-units-unit-15 font-semibold',
               theme === CardTheme.DARK ? 'text-white' : ''
             )}
           >
@@ -62,7 +66,7 @@ const MyCardItem: FC<CardData> = (data) => {
         <div className="flex flex-col">
           <span
             className={clsx(
-              'text-contentSubtitle text-units-unit-12',
+              'text-contentSubtitle text-units-unit-11 md:text-units-unit-12',
               theme === CardTheme.DARK ? 'text-white' : ''
             )}
           >
@@ -70,7 +74,7 @@ const MyCardItem: FC<CardData> = (data) => {
           </span>
           <span
             className={clsx(
-              'text-primaryText text-units-unit-15 font-semibold',
+              'text-primaryText text-units-unit-13 md:text-units-unit-15 font-semibold',
               theme === CardTheme.DARK ? 'text-white' : ''
             )}
           >
@@ -80,7 +84,7 @@ const MyCardItem: FC<CardData> = (data) => {
       </div>
       <div
         className={clsx(
-          'flex justify-between items-center border-t p-units-unit-24 rounded-b-units-unit-25',
+          'flex justify-between items-center border-t p-units-unit-16 md:p-units-unit-24 rounded-b-units-unit-25',
           theme === CardTheme.DARK
             ? 'bg-gradient-to-br from-graidientDark to-gradientLight border-transparent'
             : 'border-borderGray'
@@ -88,7 +92,7 @@ const MyCardItem: FC<CardData> = (data) => {
       >
         <div
           className={clsx(
-            'font-semibold text-units-unit-22',
+            'font-semibold text-units-unit-15 md:text-units-unit-22',
             theme === CardTheme.DARK ? 'text-white' : 'text-primaryText'
           )}
         >
@@ -96,9 +100,9 @@ const MyCardItem: FC<CardData> = (data) => {
         </div>
         <div>
           {theme === CardTheme.DARK ? (
-            <MasterCardDarkIcon />
+            <MasterCardDarkIcon className="w-[30px] h-[18px] md:w-[44px] md:h-[30px]" />
           ) : (
-            <MasterCardIcon />
+            <MasterCardIcon className="w-[30px] h-[18px] md:w-[44px] md:h-[30px]" />
           )}
         </div>
       </div>

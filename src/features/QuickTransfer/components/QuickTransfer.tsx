@@ -34,7 +34,7 @@ export const QuickTransfer = () => {
       {isLoading && <Loader type={LoaderType.CARD_SHIMMER} />}
 
       {!!data?.length && !isLoading && (
-        <div className="flex flex-col bg-white rounded-units-unit-25  p-units-unit-26 gap-y-units-unit-30 justify-between">
+        <div className="flex flex-col bg-white rounded-units-unit-25  md:p-units-unit-26 gap-y-units-unit-30 justify-between">
           <BeneficiaryList
             data={data}
             onSelectHandler={setSelectedBeneficiary}

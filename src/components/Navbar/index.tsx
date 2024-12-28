@@ -11,8 +11,8 @@ import { useSidebar } from '@/providers/SidebarProvider';
 const Navbar = ({ title }: { title: string }) => {
   const { setOpen, isOpen } = useSidebar();
   return (
-    <nav className="p-units-unit-26 md:px-units-unit-40 md:py-units-unit-20 sticky top-0 z-50 bg-white">
-      <div className="py-units-unit-13 flex justify-between pb-0 items-center">
+    <nav className="p-units-unit-26 pb-0 md:px-units-unit-40 md:py-units-unit-20 sticky top-0 z-50 bg-white">
+      <div className="md:py-units-unit-13 flex justify-between pb-0 items-center">
         <button
           onClick={() => setOpen(!isOpen)}
           type="button"
@@ -45,7 +45,7 @@ const Navbar = ({ title }: { title: string }) => {
             />
           </svg>
         </button>
-        <h1 className="font-semibold text-units-unit-28 text-primaryText">
+        <h1 className="font-semibold text-units-unit-20 md:text-units-unit-28 text-primaryText">
           {title}
         </h1>
         <div className="flex items-center justify-between gap-x-units-unit-30">
@@ -76,7 +76,7 @@ const Navbar = ({ title }: { title: string }) => {
             />
           </Link>
           <Avatar
-            className="w-[60px] h-[60px] rounded-full flex-shrink-0"
+            className="w-[35px] h-[35px] md:w-[60px] md:h-[60px] rounded-full flex-shrink-0"
             img={AvatarIcon}
           />
         </div>
@@ -88,7 +88,8 @@ const Navbar = ({ title }: { title: string }) => {
         placeholder="Search for something"
         className={{
           root: 'rounded-full border-none w-auto  md:hidden mt-units-unit-20',
-          input: 'rounded-full bg-primaryBG text-primaryText py-units-unit-13',
+          input:
+            'rounded-full bg-primaryBG text-primaryText py-units-unit-13 text-units-unit-13',
         }}
       />
     </nav>

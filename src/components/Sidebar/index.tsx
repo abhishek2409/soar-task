@@ -49,6 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
                   label={label}
                   link={link}
                   activeBarPosition="left"
+                  className={{ root: 'md:text-units-unit-18' }}
                 />
               </li>
             ))}

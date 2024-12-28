@@ -20,7 +20,7 @@ export const MyCardList = () => {
         <SectionTitle title="My Cards" />
         <Link
           to="/all-cards"
-          className="text-primaryText font-semibold text-units-unit-17 hover:text-menuActive transition-colors ease-in-out duration-300"
+          className="text-primaryText font-semibold text-units-unit-14 md:text-units-unit-17 hover:text-menuActive transition-colors ease-in-out duration-300"
         >
           See All
         </Link>
@@ -31,7 +31,7 @@ export const MyCardList = () => {
         </div>
       )}
       {!!data?.length && !isLoading && (
-        <div className="flex flex-nowrap overflow-x-auto md:max-w-screen-md lg:max-w-screen-lg gap-x-units-unit-30 pb-units-unit-24">
+        <div className="flex flex-nowrap overflow-x-auto md:max-w-screen-md lg:max-w-screen-lg gap-x-units-unit-20 md:gap-x-units-unit-30 md:pb-units-unit-24">
           {data.map((card) => (
             <MyCardItem key={card.id} {...card} />
           ))}

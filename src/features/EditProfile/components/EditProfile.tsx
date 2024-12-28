@@ -109,43 +109,46 @@ export const EditProfile = () => {
         onSubmit={methods.handleSubmit(onSubmit)}
         noValidate
       >
-        <div className="relative  w-[90px] h-[90px]">
-          <label htmlFor="profilePic" className="cursor-pointer">
-            <input
-              type="file"
-              className="hidden"
-              accept="image/*"
-              id={'profilePic'}
-              {...methods.register('profilePic')}
-              onChange={handleImageChange}
-            />
-            {previewImage && (
-              <Avatar
-                img={previewImage}
-                className="w-[90px] h-[90px]"
-                alt={name}
+        <div className="flex justify-center items-center mt-units-unit-40 md:justify-start md:items-start md:mt-units-unit-0">
+          <div className="relative w-[100px] h-[100px]  md:w-[90px] md:h-[90px] ">
+            <label htmlFor="profilePic" className="cursor-pointer">
+              <input
+                type="file"
+                className="hidden"
+                accept="image/*"
+                id={'profilePic'}
+                {...methods.register('profilePic')}
+                onChange={handleImageChange}
               />
-            )}
-            {!isLoading && (
-              <div className="absolute bottom-0 right-0 w-[30px] h-[30px] bg-black rounded-full flex justify-center items-center cursor-pointer">
-                <PencilIcon />
-              </div>
-            )}
-            {methods.formState.errors.profilePic && (
-              <p className="text-red-600 text-xs text-center mt-4">
-                {methods.formState.errors.profilePic.message}
-              </p>
-            )}
-          </label>
+              {previewImage && (
+                <Avatar
+                  img={previewImage}
+                  className="w-full h-full"
+                  alt={name}
+                />
+              )}
+              {!isLoading && (
+                <div className="absolute bottom-0 right-0 w-[30px] h-[30px] bg-black rounded-full flex justify-center items-center cursor-pointer">
+                  <PencilIcon />
+                </div>
+              )}
+              {methods.formState.errors.profilePic && (
+                <p className="text-red-600 text-xs text-center mt-4">
+                  {methods.formState.errors.profilePic.message}
+                </p>
+              )}
+            </label>
+          </div>
         </div>
+
         <div className="flex flex-col  flex-1">
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-units-unit-30">
+          <div className="grid grid-cols-1 gap-y-units-unit-16 md:grid-cols-2 md:gap-units-unit-30">
             <EditProfileForm />
           </div>
           <Button
             type="submit"
             text="Save"
-            className="text-white mt-units-unit-40  w-[190px] place-self-end"
+            className="text-white mt-units-unit-16 md:mt-units-unit-40  md:w-[190px] md:place-self-end"
           />
         </div>
       </form>

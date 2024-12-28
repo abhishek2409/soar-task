@@ -23,7 +23,7 @@ const BeneficiaryItem: FC<BeneficiaryItemProps> = ({
       {avatarImage ? (
         <Avatar
           img={avatarImage}
-          className="w-[70px] h-[70px] rounded-full flex-shrink-0"
+          className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] rounded-full flex-shrink-0"
         />
       ) : (
         <DefaultAvatar className="w-[70px] h-[70px] rounded-full flex-shrink-0" />
@@ -31,7 +31,7 @@ const BeneficiaryItem: FC<BeneficiaryItemProps> = ({
       <div className="flex flex-col gap-units-unit-5">
         <h3
           className={clsx(
-            'text-menuActive',
+            'text-menuActive text-units-unit-12 md:text-units-unit-16',
             selectedBeneficiary === id && 'font-semibold'
           )}
         >
@@ -39,7 +39,7 @@ const BeneficiaryItem: FC<BeneficiaryItemProps> = ({
         </h3>
         <p
           className={clsx(
-            'text-contentSubtitle',
+            'text-contentSubtitle text-units-unit-12 md:text-units-unit-15',
             selectedBeneficiary === id && 'font-semibold'
           )}
         >

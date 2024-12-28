@@ -8,7 +8,7 @@ import { WeeklyActivity } from '@/features/WeeklyActivity';
 const Dashboard = () => {
   return (
     <div className="flex flex-col gap-y-units-unit-24">
-      <div className="flex w-full gap-x-units-unit-30 max-w-screen-2xl md:flex-row flex-col">
+      <div className="flex w-full gap-x-units-unit-30 max-w-screen-2xl md:flex-row flex-col gap-y-units-unit-24 md:gap-y-0">
         <div className="w-full md:w-2/3">
           <MyCardList />
         </div>
@@ -16,7 +16,7 @@ const Dashboard = () => {
           <TransactionList />
         </div>
       </div>
-      <div className="flex w-full gap-x-units-unit-30 max-w-screen-2xl md:flex-row flex-col">
+      <div className="flex w-full gap-x-units-unit-30 max-w-screen-2xl md:flex-row flex-col gap-y-units-unit-24 md:gap-y-0">
         <div className="md:w-2/3">
           <WeeklyActivity />
         </div>
@@ -24,7 +24,7 @@ const Dashboard = () => {
           <ExpenseStats />
         </div>
       </div>
-      <div className="flex w-full gap-x-units-unit-30 max-w-screen-2xl md:flex-row flex-col">
+      <div className="flex w-full gap-x-units-unit-30 max-w-screen-2xl md:flex-row flex-col gap-y-units-unit-24 md:gap-y-0">
         <div className="md:w-2/5">
           <QuickTransfer />
         </div>

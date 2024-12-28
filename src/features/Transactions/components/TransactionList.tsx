@@ -20,7 +20,7 @@ export const TransactionList = () => {
       {isLoading && <Loader type={LoaderType.LIST_SHIMMER} />}
 
       {!!data?.length && !isLoading && (
-        <div className="flex flex-col bg-white rounded-units-unit-25  p-units-unit-26 gap-y-units-unit-10 max-h-[280px] overflow-auto">
+        <div className="flex flex-col bg-white rounded-units-unit-25  md:p-units-unit-26 gap-y-units-unit-10 md:max-h-[280px] md:overflow-auto">
           {data.map((transaction) => (
             <TransactionListItem key={transaction.id} {...transaction} />
           ))}

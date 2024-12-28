@@ -37,7 +37,7 @@ const TransactionIcon = ({
   return (
     <div
       className={clsx(
-        'w-[55px] h-[55px] rounded-full flex-shrink-0 flex justify-center items-center',
+        'w-[50px] h-[50px] md:w-[55px] md:h-[55px] rounded-full flex-shrink-0 flex justify-center items-center',
         color,
         className
       )}
@@ -63,10 +63,10 @@ const TransactionListItem = (data: TransactionData) => {
           className="mr-units-unit-4"
         />
         <div className="flex-col flex gap-y-units-unit-7">
-          <h3 className="text-menuActive font-medium">
+          <h3 className="text-menuActive font-medium text-units-unit-14 md:text-units-unit-16">
             {transactionDesctription}
           </h3>
-          <p className="text-contentSubtitle text-units-unit-15">
+          <p className="text-contentSubtitle text-units-unit-12 md:text-units-unit-15">
             {transactionDate}
           </p>
         </div>
@@ -74,7 +74,7 @@ const TransactionListItem = (data: TransactionData) => {
       <div>
         <h3
           className={clsx(
-            'font-medium',
+            'font-medium md:text-units-unit-16 text-units-unit-11',
             transactionType === 'DEPOSIT'
               ? 'text-alertSuccess'
               : 'text-alertError'
