@@ -5,6 +5,7 @@ import weeklyActivityReducer from '@/features/WeeklyActivity/slice/weeklyActivit
 import expenseStatsReducer from '@/features/ExpenseStatistics/slice/expenseStats.slice';
 import quickTransferReducer from '@/features/QuickTransfer/slice/quickTransfer.slice';
 import balanceHistoryReducer from '@/features/BalanceHistory/slice/balanceHistory.slice';
+import profileReducer from '@/features/EditProfile/slice/profile.slice';
 import { useDispatch } from 'react-redux';
 
 const store = configureStore({
@@ -15,6 +16,7 @@ const store = configureStore({
     expenseStats: expenseStatsReducer,
     quickTransfer: quickTransferReducer,
     balanceHistory: balanceHistoryReducer,
+    profile: profileReducer,
   },
 });
 

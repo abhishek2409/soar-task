@@ -6,19 +6,12 @@ import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Button from '@/components/Button';
-
-interface FormValues {
-  name: string;
-  username: string;
-  email: string;
-  password: string;
-  dateOfBirth: string;
-  presentAddress: string;
-  permanentAddress: string;
-  city: string;
-  postalCode: string;
-  country: string;
-}
+import { Profile } from '../types';
+import { RootState, useAppDispatch } from '@/store';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { fetchProfile } from '../thunks';
+import Loader, { LoaderType } from '@/components/Loader';
 
 const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
@@ -34,7 +27,13 @@ const schema = yup.object().shape({
 });
 
 export const EditProfile = () => {
-  const methods = useForm<FormValues>({
+  const { data, isLoading } = useSelector((state: RootState) => state.profile);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    if (!data) dispatch(fetchProfile());
+  }, []);
+
+  const methods = useForm<Profile>({
     resolver: yupResolver(schema),
     defaultValues: {
       name: '',
@@ -50,7 +49,13 @@ export const EditProfile = () => {
     },
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  useEffect(() => {
+    if (data) {
+      methods.reset(data);
+    }
+  }, [data]);
+
+  const onSubmit: SubmitHandler<Profile> = (data) => {
     console.log('Form Data:', data);
   };
   return (
@@ -76,6 +81,7 @@ export const EditProfile = () => {
           />
         </div>
       </form>
+      {isLoading && <Loader type={LoaderType.API_SPINNER} />}
     </FormProvider>
   );
 };
