@@ -34,7 +34,12 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
           <ul>
             {menuItems.map(({ label, icon, link }, index) => (
               <li key={index} className="hover:menuActive mb-5">
-                <CustomLink icon={icon} label={label} link={link} />
+                <CustomLink
+                  icon={icon}
+                  label={label}
+                  link={link}
+                  activeBarPosition="left"
+                />
               </li>
             ))}
           </ul>
