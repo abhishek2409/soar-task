@@ -4,11 +4,16 @@ import { FC } from 'react';
 export interface AvatarProps {
   img: string;
   className?: string;
+  alt?: string;
 }
-const Avatar: FC<AvatarProps> = ({ img: AvatarImg, className }) => {
+const Avatar: FC<AvatarProps> = ({ img: AvatarImg, className, alt }) => {
   return (
     <div className={clsx(className)}>
-      <img src={AvatarImg} alt="avtar" className="w-full h-full rounded-full" />
+      <img
+        src={AvatarImg}
+        alt={alt ?? 'Avatar img'}
+        className="w-full h-full rounded-full"
+      />
     </div>
   );
 };

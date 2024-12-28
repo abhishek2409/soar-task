@@ -1,4 +1,5 @@
 import { Profile } from '@/features/EditProfile';
+import AvatarIcon from '@/assets/images/avatar1.png';
 
 export const profileMockResponse: Profile = {
   name: 'John Doe',
@@ -11,4 +12,5 @@ export const profileMockResponse: Profile = {
   city: 'New York',
   postalCode: '10001',
   country: 'United States',
+  profilePic: AvatarIcon,
 };

@@ -9,6 +9,7 @@ export interface Profile {
   city: string;
   postalCode: string;
   country: string;
+  profilePic?: File | string;
 }
 
 export interface ProfileState {
