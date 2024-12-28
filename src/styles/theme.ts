@@ -43,6 +43,8 @@ export default {
     'units-unit-7': '0.4375rem',
     'units-unit-8': '0.5rem',
     'units-unit-10': '0.625rem',
+    'units-unit-11': '0.6875rem',
+    'units-unit-12': '0.75rem',
     'units-unit-13': '0.8125rem',
     'units-unit-14': '0.875rem',
     'units-unit-15': '0.9375rem',

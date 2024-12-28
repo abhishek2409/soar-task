@@ -16,6 +16,7 @@ const Navbar = ({ title }: { title: string }) => {
         </h1>
         <div className="flex items-center justify-between gap-x-units-unit-30">
           <TextInput
+            name="search"
             leftIcon={<SearchIcon />}
             type="search"
             placeholder="Search for something"

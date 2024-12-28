@@ -12,6 +12,8 @@ interface InputProps {
   };
   leftIcon?: React.ReactNode;
   type?: string;
+  name: string;
+  error?: string;
 }
 
 const TextInput: React.FC<InputProps> = ({
@@ -22,10 +24,21 @@ const TextInput: React.FC<InputProps> = ({
   className,
   leftIcon,
   type = 'text',
+  name,
+  error,
 }) => {
   return (
     <div className={clsx('w-full', className?.root)}>
-      {label && <label className="block text-gray-700 mb-1">{label}</label>}
+      {label && (
+        <label
+          className={clsx('block text-menuActive mb-units-unit-11', {
+            'text-red-600': error,
+          })}
+          htmlFor={name}
+        >
+          {label}
+        </label>
+      )}
       <div className="relative flex items-center">
         {leftIcon && (
           <div className="absolute left-3 text-gray-400">{leftIcon}</div>
@@ -35,15 +48,22 @@ const TextInput: React.FC<InputProps> = ({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
+          name={name}
           className={clsx(
             'w-full px-4 py-2 border-none text-gray-600 bg-none focus:outline-none',
             {
               'pl-10': leftIcon, // Add padding if left icon is present
+              'border-red-600 text-red-600': error,
             },
             className?.input
           )}
         />
       </div>
+      {error && (
+        <p className="mt-2 text-sm text-red-600 dark:text-red-500">
+          <span className="font-medium">{error}</span>
+        </p>
+      )}
     </div>
   );
 };
