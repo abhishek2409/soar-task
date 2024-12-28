@@ -38,4 +38,12 @@ export const transactionMockResponse: TransactionData[] = [
     transactionProvider: TransactionProvider.CASH,
     transactionDesctription: 'Withdrawan Cash',
   },
+  {
+    id: uuid(),
+    amount: '$2,500',
+    transactionType: TransactionType.DEPOSIT,
+    transactionDate: '28 January 2021',
+    transactionProvider: TransactionProvider.CARD,
+    transactionDesctription: 'Deposit from my Card',
+  },
 ];

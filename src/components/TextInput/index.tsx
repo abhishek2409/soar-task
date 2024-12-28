@@ -41,7 +41,9 @@ const TextInput: React.FC<InputProps> = ({
       )}
       <div className="relative flex items-center">
         {leftIcon && (
-          <div className="absolute left-3 text-gray-400">{leftIcon}</div>
+          <div className="absolute left-units-unit-26 text-gray-400">
+            {leftIcon}
+          </div>
         )}
         <input
           type={type}
@@ -52,7 +54,7 @@ const TextInput: React.FC<InputProps> = ({
           className={clsx(
             'w-full px-4 py-2 border-none text-gray-600 bg-none focus:outline-none',
             {
-              'pl-10': leftIcon, // Add padding if left icon is present
+              'pl-units-unit-60': leftIcon, // Add padding if left icon is present
               'border-red-600 text-red-600': error,
             },
             className?.input

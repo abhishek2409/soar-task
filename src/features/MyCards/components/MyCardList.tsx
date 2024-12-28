@@ -20,7 +20,7 @@ export const MyCardList = () => {
         <SectionTitle title="My Cards" />
         <Link
           to="/all-cards"
-          className="text-primaryText font-semibold text-units-unit-17"
+          className="text-primaryText font-semibold text-units-unit-17 hover:text-menuActive transition-colors ease-in-out duration-300"
         >
           See All
         </Link>

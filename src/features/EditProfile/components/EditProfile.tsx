@@ -105,7 +105,7 @@ export const EditProfile = () => {
   return (
     <FormProvider {...methods}>
       <form
-        className="flex gap-x-units-unit-60 my-units-unit-40 mx-units-unit-30"
+        className="flex flex-col gap-y-units-unit-30  md:flex-row md:gap-x-units-unit-60 md:my-units-unit-40 md:mx-units-unit-30"
         onSubmit={methods.handleSubmit(onSubmit)}
         noValidate
       >
@@ -139,13 +139,13 @@ export const EditProfile = () => {
           </label>
         </div>
         <div className="flex flex-col  flex-1">
-          <div className="grid grid-cols-2 gap-units-unit-30">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-units-unit-30">
             <EditProfileForm />
           </div>
           <Button
             type="submit"
             text="Save"
-            className="text-white mt-units-unit-40  w-[190px]"
+            className="text-white mt-units-unit-40  w-[190px] place-self-end"
           />
         </div>
       </form>

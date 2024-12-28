@@ -27,4 +27,9 @@ export const expenseStatsMockresponse: ExpenseStatsData[] = [
     category: 'Travel',
     amount: 2500,
   },
+  {
+    id: uuid(),
+    category: 'Others',
+    amount: 5000,
+  },
 ];

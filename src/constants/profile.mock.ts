@@ -6,7 +6,7 @@ export const profileMockResponse: Profile = {
   username: 'johndoe',
   email: 'G2w4o@example.com',
   password: 'password123',
-  dateOfBirth: '1990-01-01',
+  dateOfBirth: '1991-09-01',
   presentAddress: '123 Main St',
   permanentAddress: '456 Elm St',
   city: 'New York',

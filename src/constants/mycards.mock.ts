@@ -20,4 +20,13 @@ export const myCardsMockResponse: CardData[] = [
     cardProviderType: CardProviderType.MASTERCARD,
     theme: CardTheme.LIGHT,
   },
+  {
+    id: uuid(),
+    balance: '$3,000',
+    cardHolderName: 'Bob Johnson',
+    expiryDate: '08/31',
+    cardNumber: '3778 **** **** 1234',
+    cardProviderType: CardProviderType.MASTERCARD,
+    theme: CardTheme.DARK,
+  },
 ];

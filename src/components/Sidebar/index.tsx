@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import CustomLink from '../CustomLink';
 import { ElementType } from 'react';
+import { useSidebar } from '@/providers/SidebarProvider';
+import clsx from 'clsx';
 
 export interface SidebarProps {
   menuItems: {
@@ -16,10 +18,14 @@ export interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
+  const { isOpen, setOpen } = useSidebar();
   return (
     <>
       <aside
-        className="fixed top-0 left-0 z-40 w-[250px] h-screen transition-transform -translate-x-full bg-white border-r border-borderGray sm:translate-x-0 "
+        className={clsx(
+          `fixed top-0 left-0 z-[99] w-[250px] h-screen transition-transform -translate-x-full bg-white border-r border-borderGray md:translate-x-0 `,
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        )}
         aria-label="Sidebar"
       >
         <div className=" px-units-unit-30 py-units-unit-24 ">
@@ -33,7 +39,11 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
         <div className="h-full overflow-y-auto bg-white">
           <ul>
             {menuItems.map(({ label, icon, link }, index) => (
-              <li key={index} className="hover:menuActive mb-5">
+              <li
+                key={index}
+                className="hover:menuActive mb-5"
+                onClick={() => setOpen(false)}
+              >
                 <CustomLink
                   icon={icon}
                   label={label}
@@ -45,6 +55,12 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
           </ul>
         </div>
       </aside>
+      {isOpen && (
+        <div
+          className="bg-gray-900/50 dark:bg-gray-900/80 fixed inset-0 z-30"
+          onClick={() => setOpen(false)}
+        />
+      )}
     </>
   );
 };

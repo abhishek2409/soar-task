@@ -1,4 +1,3 @@
-import { fetchMyExpenses } from '@/features/ExpenseStatistics/thunks';
 import { RootState, useAppDispatch } from '@/store';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';

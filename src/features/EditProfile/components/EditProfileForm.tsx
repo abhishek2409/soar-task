@@ -28,7 +28,7 @@ const inputFields = [
   },
   {
     name: 'dateOfBirth',
-    type: 'text',
+    type: 'date',
     label: 'Date of Birth',
     placeholder: 'Enter your date of birth',
   },

@@ -39,7 +39,7 @@ const options:
       color: 'white',
       font: {
         weight: 'bold',
-        size: 16,
+        // size: 16,
       },
       textAlign: 'center',
       formatter: (value, context: Context) => {
