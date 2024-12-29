@@ -6,7 +6,7 @@ export const getPageTitle = (pathname: string) => {
     case '/settings/edit-profile':
     case '/settings/preference':
     case '/settings/security':
-      return 'Setting';
+      return 'Settings';
     case '/transactions':
       return 'Transactions';
     default:

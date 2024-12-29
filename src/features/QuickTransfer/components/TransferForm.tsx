@@ -37,7 +37,7 @@ const TransferForm: FC<TransferFormProps> = ({ handleQuickTransfer }) => {
           required
         />
         <button
-          className="p-3 md:p-4 bg-menuActive text-white text-sm font-medium  flex items-center gap-2.5 hover:bg-gray-800 focus:outline-none   rounded-full text-units-unit-12 md:text-units-unit-16"
+          className="p-3 md:p-4 bg-menuActive text-white text-sm font-medium  flex items-center gap-2.5  focus:outline-none   rounded-full text-units-unit-12 md:text-units-unit-16 hover:bg-gradient-to-br to-gradientLight from-gradientDark "
           type="submit"
         >
           Send

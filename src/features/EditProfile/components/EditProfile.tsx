@@ -148,7 +148,7 @@ export const EditProfile = () => {
           <Button
             type="submit"
             text="Save"
-            className="text-white mt-units-unit-16 md:mt-units-unit-40  md:w-[190px] md:place-self-end"
+            className="text-white mt-units-unit-16 md:mt-units-unit-40  md:w-[190px] md:place-self-end hover:bg-gradient-to-br to-gradientLight from-gradientDark"
           />
         </div>
       </form>
