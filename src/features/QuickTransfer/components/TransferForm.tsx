@@ -1,4 +1,4 @@
-import { ChangeEvent, useState, FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import SendIcon from '@/assets/svgs/send.svg?react';
 
 interface TransferFormProps {

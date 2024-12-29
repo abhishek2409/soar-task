@@ -1,5 +1,5 @@
 import { RootState, useAppDispatch } from '@/store';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchBeneficiaryList, sendMoney } from '../thunks';
 import SectionTitle from '@/components/SectionTitle';
