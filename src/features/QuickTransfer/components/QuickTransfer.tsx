@@ -9,6 +9,8 @@ import TransferForm from './TransferForm';
 import { useToast } from '@/providers';
 
 export const QuickTransfer = () => {
+  const [amount, setAmount] = useState('');
+
   const { setToast } = useToast();
   const [selectedBeneficiary, setSelectedBeneficiary] = useState('');
   const [err, setErr] = useState('');
@@ -38,6 +40,7 @@ export const QuickTransfer = () => {
     try {
       await dispatch(sendMoney(data));
       setSelectedBeneficiary('');
+      setAmount('');
       setToast({
         open: true,
         text: 'Money sent successfully',
@@ -78,7 +81,11 @@ export const QuickTransfer = () => {
             selectedBeneficiary={selectedBeneficiary}
           />
 
-          <TransferForm handleQuickTransfer={handleQuickTransfer} />
+          <TransferForm
+            handleQuickTransfer={handleQuickTransfer}
+            amount={amount}
+            setAmount={setAmount}
+          />
           {err && <p className="text-red-500">{err}</p>}
         </div>
       )}

@@ -1,12 +1,17 @@
-import { ChangeEvent, useState, FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import SendIcon from '@/assets/svgs/send.svg?react';
 
 interface TransferFormProps {
   handleQuickTransfer: (amount: number) => void;
+  amount: string;
+  setAmount: (amount: string) => void;
 }
 
-const TransferForm: FC<TransferFormProps> = ({ handleQuickTransfer }) => {
-  const [amount, setAmount] = useState('');
+const TransferForm: FC<TransferFormProps> = ({
+  handleQuickTransfer,
+  amount,
+  setAmount,
+}) => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (/^\d*\.?\d{0,2}$/.test(value)) {
@@ -17,7 +22,6 @@ const TransferForm: FC<TransferFormProps> = ({ handleQuickTransfer }) => {
   const handleSubmit = async (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleQuickTransfer(+amount);
-    setAmount('');
   };
   return (
     <form
