@@ -10,6 +10,7 @@ import TransferForm from './TransferForm';
 
 export const QuickTransfer = () => {
   const [selectedBeneficiary, setSelectedBeneficiary] = useState('');
+  const [err, setErr] = useState('');
   const { data, isLoading } = useSelector(
     (state: RootState) => state.quickTransfer
   );
@@ -20,7 +21,15 @@ export const QuickTransfer = () => {
   }, []);
 
   const handleQuickTransfer = (amount: number) => {
-    if (!amount || !selectedBeneficiary) return;
+    if (!amount) {
+      setErr('Please enter an amount');
+      return;
+    }
+    if (!selectedBeneficiary) {
+      setErr('Please select a beneficiary');
+      return;
+    }
+    setErr('');
     const data = {
       amount,
       beneficiaryId: selectedBeneficiary,
@@ -42,6 +51,7 @@ export const QuickTransfer = () => {
           />
 
           <TransferForm handleQuickTransfer={handleQuickTransfer} />
+          {err && <p className="text-red-500">{err}</p>}
         </div>
       )}
     </div>

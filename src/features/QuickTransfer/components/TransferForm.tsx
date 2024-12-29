@@ -22,6 +22,7 @@ const TransferForm: FC<TransferFormProps> = ({ handleQuickTransfer }) => {
     <form
       className="flex gap-x-units-unit-25 md:gap-x-units-unit-10 3xl:gap-x-units-unit-30 items-center w-full"
       onSubmit={handleSubmit}
+      noValidate
     >
       <label className="text-primaryText flex-shrink-0 text-units-unit-12 md:text-units-unit-16 ">
         Write Amount
