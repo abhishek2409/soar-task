@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, FC } from 'react';
 
 // Define the types for your context values
 type ToastType = 'success' | 'error';
@@ -22,7 +22,7 @@ interface ToastProviderProps {
   children: ReactNode;
 }
 
-export const ToastProvider: React.FC<ToastProviderProps> = ({ children }) => {
+export const ToastProvider: FC<ToastProviderProps> = ({ children }) => {
   const [toastData, setToast] = useState<Partial<ToastData>>();
 
   return (

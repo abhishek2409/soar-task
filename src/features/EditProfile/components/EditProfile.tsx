@@ -8,7 +8,7 @@ import * as yup from 'yup';
 import Button from '@/components/Button';
 import { Profile } from '../types';
 import { RootState, useAppDispatch } from '@/store';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchProfile, updateProfile } from '../thunks';
 import Loader, { LoaderType } from '@/components/Loader';
@@ -96,7 +96,7 @@ export const EditProfile = () => {
   const profilePic = methods.watch('profilePic');
   const name = methods.watch('name');
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       if (file.size > 2 * 1024 * 1024) {

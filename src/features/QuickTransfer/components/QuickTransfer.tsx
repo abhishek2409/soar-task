@@ -6,7 +6,6 @@ import SectionTitle from '@/components/SectionTitle';
 import Loader, { LoaderType } from '@/components/Loader';
 import BeneficiaryList from './BeneficiaryList';
 import TransferForm from './TransferForm';
-import { debugLog } from '@/services';
 import { useToast } from '@/providers';
 
 export const QuickTransfer = () => {

@@ -38,7 +38,7 @@ export const options: _DeepPartialObject<
     PluginChartOptions<'line'> &
     DatasetChartOptions<'line'> &
     ScaleChartOptions<'line'> &
-    LineControllerChartOptions
+    LineControllerChartOptions & { tension: number }
 > = {
   responsive: true,
   tension: 0.4,
