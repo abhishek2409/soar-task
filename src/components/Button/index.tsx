@@ -10,6 +10,8 @@ const Button: FC<ButtonProps> = (props) => {
   const { className, text, ...rest } = props;
   return (
     <button
+      role="button"
+      aria-label={text}
       className={clsx(
         'bg-menuActive text-white, rounded-units-unit-15 text-center py-units-unit-12 px-units-unit-30',
         className

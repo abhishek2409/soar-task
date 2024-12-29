@@ -27,6 +27,8 @@ const CustomLink: FC<CustomLinkProps> = ({
     (link === '/settings' && location.pathname.includes('settings'));
   return (
     <NavLink
+      aria-label={label}
+      role="link"
       to={link}
       className={({ isActive }) =>
         clsx(

@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import CustomLink from '../CustomLink';
-import { ElementType } from 'react';
+import { ElementType, FC } from 'react';
 import { useSidebar } from '@/providers';
 import clsx from 'clsx';
 
@@ -17,11 +17,12 @@ export interface SidebarProps {
   };
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
+const Sidebar: FC<SidebarProps> = ({ menuItems, logo }) => {
   const { isOpen, setOpen } = useSidebar();
   return (
     <>
       <aside
+        role="menubar"
         className={clsx(
           `fixed top-0 left-0 z-[99] w-[250px] h-screen transition-transform -translate-x-full bg-white border-r border-borderGray xl:translate-x-0 `,
           isOpen ? 'translate-x-0' : '-translate-x-full'
@@ -37,9 +38,10 @@ const Sidebar: React.FC<SidebarProps> = ({ menuItems, logo }) => {
           </NavLink>
         </div>
         <div className="h-full overflow-y-auto bg-white">
-          <ul>
+          <ul role="menu">
             {menuItems.map(({ label, icon, link }, index) => (
               <li
+                role="none"
                 key={index}
                 className="hover:menuActive mb-5"
                 onClick={() => setOpen(false)}

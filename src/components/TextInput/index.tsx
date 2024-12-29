@@ -1,22 +1,22 @@
-import React from 'react';
+import { ChangeEvent, FC, ReactNode } from 'react';
 import clsx from 'clsx';
 
 interface InputProps {
   label?: string;
   placeholder?: string;
   value?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   className?: {
     root?: string;
     input?: string;
   };
-  leftIcon?: React.ReactNode;
+  leftIcon?: ReactNode;
   type?: string;
   name: string;
   error?: string;
 }
 
-const TextInput: React.FC<InputProps> = ({
+const TextInput: FC<InputProps> = ({
   label,
   placeholder,
   value,
@@ -31,6 +31,8 @@ const TextInput: React.FC<InputProps> = ({
     <div className={clsx('w-full', className?.root)}>
       {label && (
         <label
+          role="label"
+          aria-label={label}
           className={clsx('block text-menuActive mb-units-unit-11', {
             'text-red-600': error,
           })}
@@ -46,6 +48,8 @@ const TextInput: React.FC<InputProps> = ({
           </div>
         )}
         <input
+          role="search"
+          aria-label={label ?? name}
           type={type}
           placeholder={placeholder}
           value={value}

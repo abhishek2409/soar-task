@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode, FC } from 'react';
 
 // Define the types for your context values
 interface SidebarContextType {
@@ -14,9 +14,7 @@ interface SidebarProviderProps {
   children: ReactNode;
 }
 
-export const SidebarProvider: React.FC<SidebarProviderProps> = ({
-  children,
-}) => {
+export const SidebarProvider: FC<SidebarProviderProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const setOpen = (open: boolean) => setIsOpen(open);

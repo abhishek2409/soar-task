@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { BeneficiaryData } from '../types';
 import Avatar, { DefaultAvatar } from '@/components/Avatar';
 import clsx from 'clsx';

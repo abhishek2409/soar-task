@@ -11,9 +11,15 @@ import { useSidebar } from '@/providers';
 const Navbar = ({ title }: { title: string }) => {
   const { setOpen, isOpen } = useSidebar();
   return (
-    <nav className="p-units-unit-26 pb-0 xl:px-units-unit-40 xl:py-units-unit-20 sticky top-0 z-50 bg-white xl:border-b xl:border-borderGray border-none">
+    <nav
+      className="p-units-unit-26 pb-0 xl:px-units-unit-40 xl:py-units-unit-20 sticky top-0 z-50 bg-white xl:border-b xl:border-borderGray border-none"
+      role="navigation"
+    >
       <div className="xl:py-units-unit-13 flex justify-between pb-0 items-center">
         <button
+          aria-controls="sidebar"
+          role="button"
+          aria-label="Toggle sidebar"
           onClick={() => setOpen(!isOpen)}
           type="button"
           className="inline-flex items-center  text-sm text-gray-500 rounded-lg xl:hidden focus:outline-none  focus:bg-transparent"
@@ -60,13 +66,18 @@ const Navbar = ({ title }: { title: string }) => {
                 'rounded-full bg-primaryBG text-primaryText py-units-unit-13',
             }}
           />
-          <Link to="/settings" className="m-0 p-0  items-center hidden xl:flex">
+          <Link
+            to="/settings"
+            className="m-0 p-0  items-center hidden xl:flex"
+            aria-label="Settings Link"
+          >
             <Icon
               svg={SettingsIcon}
               className="rounded-full bg-primaryBG p-3 w-[50px] h-[50px]"
             />
           </Link>
           <Link
+            aria-label="Notification Link"
             to="/notifications"
             className="m-0 p-0  items-center hidden xl:flex"
           >

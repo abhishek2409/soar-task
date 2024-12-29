@@ -44,8 +44,11 @@ const options:
       textAlign: 'center',
       formatter: (value, context: Context) => {
         const dataset = context.dataset.data;
-        const totalValue = dataset.reduce((a, b) => a + b, 0);
-        const percentage = (value / totalValue) * 100;
+        const totalValue = dataset.reduce(
+          (a, b) => (a as number) + (b as number),
+          0
+        );
+        const percentage = (value / (totalValue as number)) * 100;
         const roundedPercentage = Math.round(percentage * 100) / 100;
         return (
           roundedPercentage +
