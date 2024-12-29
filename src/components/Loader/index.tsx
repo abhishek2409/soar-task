@@ -36,33 +36,20 @@ const ListShimmer = () => {
 
 const ChartLoader = () => {
   return (
-    <div
-      role="status"
-      className="max-w-full animate-pulse dark:border-gray-700"
-    >
+    <div role="status" className="max-w-full animate-pulse">
       <div className="flex items-baseline mt-4">
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 dark:bg-gray-700"></div>
-        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 dark:bg-gray-700"></div>
-        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 dark:bg-gray-700"></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 "></div>
+        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 "></div>
+        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 "></div>
+        <div className="w-5 h-24 ms-6 bg-gray-200 rounded-t-lg "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 "></div>
+        <div className="w-5 h-64 ms-6 bg-gray-200 rounded-t-lg "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-36 ms-6 "></div>
+        <div className="w-5 bg-gray-200 rounded-t-lg h-48 ms-6 "></div>
       </div>
     </div>
   );
@@ -94,10 +81,10 @@ const PageLoader = () => {
 const ApiLoader = () => {
   return (
     <>
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-[9998]" />
+      <div className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-[9998]" />
       <div
         role="status"
-        className="absolute -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 z-[9999]"
+        className="fixed -translate-x-1/2 -translate-y-1/2 top-2/4 left-1/2 z-[9999]"
       >
         <svg
           aria-hidden="true"

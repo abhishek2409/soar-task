@@ -6,17 +6,17 @@ import SettingsIcon from '@/assets/svgs/setting-shallow.svg?react';
 import NotificationIcon from '@/assets/svgs/notification.svg?react';
 import AvatarIcon from '@/assets/images/avatar1.png';
 import Avatar from '../Avatar';
-import { useSidebar } from '@/providers/SidebarProvider';
+import { useSidebar } from '@/providers';
 
 const Navbar = ({ title }: { title: string }) => {
   const { setOpen, isOpen } = useSidebar();
   return (
-    <nav className="p-units-unit-26 pb-0 md:px-units-unit-40 md:py-units-unit-20 sticky top-0 z-50 bg-white">
-      <div className="md:py-units-unit-13 flex justify-between pb-0 items-center">
+    <nav className="p-units-unit-26 pb-0 xl:px-units-unit-40 xl:py-units-unit-20 sticky top-0 z-50 bg-white xl:border-b xl:border-borderGray border-none">
+      <div className="xl:py-units-unit-13 flex justify-between pb-0 items-center">
         <button
           onClick={() => setOpen(!isOpen)}
           type="button"
-          className="inline-flex items-center  text-sm text-gray-500 rounded-lg md:hidden focus:outline-none  focus:bg-transparent"
+          className="inline-flex items-center  text-sm text-gray-500 rounded-lg xl:hidden focus:outline-none  focus:bg-transparent"
         >
           <svg
             width="18"
@@ -45,7 +45,7 @@ const Navbar = ({ title }: { title: string }) => {
             />
           </svg>
         </button>
-        <h1 className="font-semibold text-units-unit-20 md:text-units-unit-28 text-primaryText">
+        <h1 className="font-semibold text-units-unit-20 xl:text-units-unit-28 text-primaryText">
           {title}
         </h1>
         <div className="flex items-center justify-between gap-x-units-unit-30">
@@ -55,12 +55,12 @@ const Navbar = ({ title }: { title: string }) => {
             type="search"
             placeholder="Search for something"
             className={{
-              root: 'rounded-full border-none w-auto hidden md:flex',
+              root: 'rounded-full border-none w-auto hidden xl:flex',
               input:
                 'rounded-full bg-primaryBG text-primaryText py-units-unit-13',
             }}
           />
-          <Link to="/settings" className="m-0 p-0  items-center hidden md:flex">
+          <Link to="/settings" className="m-0 p-0  items-center hidden xl:flex">
             <Icon
               svg={SettingsIcon}
               className="rounded-full bg-primaryBG p-3 w-[50px] h-[50px]"
@@ -68,7 +68,7 @@ const Navbar = ({ title }: { title: string }) => {
           </Link>
           <Link
             to="/notifications"
-            className="m-0 p-0  items-center hidden md:flex"
+            className="m-0 p-0  items-center hidden xl:flex"
           >
             <Icon
               svg={NotificationIcon}
@@ -76,7 +76,7 @@ const Navbar = ({ title }: { title: string }) => {
             />
           </Link>
           <Avatar
-            className="w-[35px] h-[35px] md:w-[60px] md:h-[60px] rounded-full flex-shrink-0"
+            className="w-[35px] h-[35px] xl:w-[60px] xl:h-[60px] rounded-full flex-shrink-0"
             img={AvatarIcon}
           />
         </div>
@@ -87,7 +87,7 @@ const Navbar = ({ title }: { title: string }) => {
         type="search"
         placeholder="Search for something"
         className={{
-          root: 'rounded-full border-none w-auto  md:hidden mt-units-unit-20',
+          root: 'rounded-full border-none w-auto  xl:hidden my-units-unit-20',
           input:
             'rounded-full bg-primaryBG text-primaryText py-units-unit-13 text-units-unit-13',
         }}

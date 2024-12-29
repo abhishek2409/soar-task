@@ -74,9 +74,9 @@ const Layout = () => {
   return (
     <>
       <Sidebar menuItems={menuItems} logo={logo} />
-      <div className="flex flex-col flex-1 md:ml-[250px]">
+      <div className="flex flex-col flex-1 xl:ml-[250px]">
         <Navbar title={title} />
-        <main className="flex-1 p-4 md:bg-primaryBG py-units-unit-24 px-units-unit-25 md:px-units-unit-40 md:min-h-[calc(100vh-126px)]">
+        <main className="flex-1 p-4 xl:bg-primaryBG py-units-unit-24 px-units-unit-25 xl:px-units-unit-40 xl:min-h-[calc(100vh-126px)]">
           <Outlet />
         </main>
       </div>

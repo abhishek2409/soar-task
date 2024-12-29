@@ -10,9 +10,10 @@ import { Profile } from '../types';
 import { RootState, useAppDispatch } from '@/store';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { fetchProfile } from '../thunks';
+import { fetchProfile, updateProfile } from '../thunks';
 import Loader, { LoaderType } from '@/components/Loader';
 import { debugLog } from '@/services';
+import { useToast } from '@/providers';
 
 const schema = yup.object().shape({
   name: yup.string().required('Name is required'),
@@ -28,6 +29,7 @@ const schema = yup.object().shape({
 });
 
 export const EditProfile = () => {
+  const { setToast } = useToast();
   const [localImage, setLocalImage] = useState('');
   const { data, isLoading } = useSelector((state: RootState) => state.profile);
   const dispatch = useAppDispatch();
@@ -59,10 +61,36 @@ export const EditProfile = () => {
     }
   }, [data]);
 
-  const onSubmit: SubmitHandler<Profile> = (data) => {
+  const onSubmit: SubmitHandler<Profile> = async (data) => {
     debugLog('Form Data:', data);
     debugLog('Image Type File: ', data.profilePic instanceof File);
     debugLog('Image Type String: ', typeof data.profilePic === 'string');
+    try {
+      await dispatch(updateProfile(data));
+      setToast({
+        open: true,
+        text: 'Profile updated successfully',
+        type: 'success',
+      });
+
+      setTimeout(() => {
+        setToast({
+          open: false,
+        });
+      }, 2000);
+    } catch (e) {
+      setToast({
+        open: true,
+        text: 'Failed to update profile',
+        type: 'error',
+      });
+
+      setTimeout(() => {
+        setToast({
+          open: false,
+        });
+      }, 2000);
+    }
   };
 
   const profilePic = methods.watch('profilePic');
@@ -105,12 +133,12 @@ export const EditProfile = () => {
   return (
     <FormProvider {...methods}>
       <form
-        className="flex flex-col gap-y-units-unit-30  md:flex-row md:gap-x-units-unit-60 md:my-units-unit-40 md:mx-units-unit-30"
+        className="flex flex-col gap-y-units-unit-30  xl:flex-row xl:gap-x-units-unit-60 xl:my-units-unit-40 xl:mx-units-unit-30"
         onSubmit={methods.handleSubmit(onSubmit)}
         noValidate
       >
-        <div className="flex justify-center items-center mt-units-unit-40 md:justify-start md:items-start md:mt-units-unit-0">
-          <div className="relative w-[100px] h-[100px]  md:w-[90px] md:h-[90px] ">
+        <div className="flex justify-center items-center mt-units-unit-40 xl:justify-start xl:items-start xl:mt-units-unit-0">
+          <div className="relative w-[100px] h-[100px]  xl:w-[90px] xl:h-[90px] ">
             <label htmlFor="profilePic" className="cursor-pointer">
               <input
                 type="file"

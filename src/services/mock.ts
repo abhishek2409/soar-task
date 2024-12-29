@@ -34,6 +34,7 @@ mock
   .onGet('/beneficiaries')
   .withDelayInMs(1000)
   .reply(200, beneficiariesMockResponse);
+mock.onPost('/quick-transfer').withDelayInMs(1000).reply(200, {});
 
 mock
   .onGet('/balance-history')
@@ -41,6 +42,7 @@ mock
   .reply(200, balanceHistoryMockResponse);
 
 mock.onGet('/profile').withDelayInMs(1000).reply(200, profileMockResponse);
+mock.onPut('/profile').withDelayInMs(1000).reply(204, {});
 
 export const enableMock = () => {
   debugLog('Mock API enabled.');

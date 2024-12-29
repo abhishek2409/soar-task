@@ -7,9 +7,7 @@ import store from './store';
 
 import { enableMock } from '@/services';
 
-if (import.meta.env.MODE === 'development') {
-  enableMock();
-}
+enableMock();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

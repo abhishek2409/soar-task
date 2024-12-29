@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { ProfileState } from '../types';
-import { fetchProfile } from '../thunks';
+import { fetchProfile, updateProfile } from '../thunks';
 
 const initialState: ProfileState = {
   isLoading: false,
@@ -27,6 +27,18 @@ const profileSlice = createSlice({
         state.isLoading = false;
         state.error = action.error.message || 'Failed to fetch profile';
         state.data = null;
+      })
+      .addCase(updateProfile.pending, (state) => {
+        state.isLoading = true;
+        state.error = '';
+      })
+      .addCase(updateProfile.fulfilled, (state) => {
+        state.isLoading = false;
+        state.error = '';
+      })
+      .addCase(updateProfile.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message || 'Failed to update profile';
       });
   },
 });

@@ -13,13 +13,13 @@ const Tabs: FC<TabsProps> = ({ tabs }) => {
     <div className="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700">
       <ul className="flex flex-wrap -mb-px">
         {tabs.map((tab) => (
-          <li className="md:me-units-unit-60" key={tab.name}>
+          <li className="xl:me-units-unit-60" key={tab.name}>
             <CustomLink
               label={tab.name}
               link={tab.href}
               activeBarPosition="bottom"
               className={{
-                root: 'inline-block py-2.5 px-units-unit-15 font-medium hover:text-menuActive transition-colors ease-in-out duration-300 text-units-unit-13 md:text-units-unit-16',
+                root: 'inline-block py-2.5 px-units-unit-15 font-medium hover:text-menuActive transition-colors ease-in-out duration-300 text-units-unit-13 xl:text-units-unit-16',
                 active: 'text-menuActive',
                 inactive: 'text-contentSubtitle',
               }}

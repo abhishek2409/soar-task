@@ -33,7 +33,7 @@ const tabs = [
 
 const Settings = () => {
   return (
-    <div className="bg-white rounded-units-unit-25 md:p-units-unit-30">
+    <div className="bg-white rounded-units-unit-25 xl:p-units-unit-30">
       <Tabs tabs={tabs} />
       <Routes>
         <Route path="" element={<Navigate to="edit-profile" replace />} />

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchBeneficiaryList } from '../thunks';
+import { fetchBeneficiaryList, sendMoney } from '../thunks';
 import { QuickTransferState } from '../types';
 
 const initialState: QuickTransferState = {
@@ -28,6 +28,20 @@ const quickTransferSlice = createSlice({
         state.error =
           action.error.message || 'Failed to fetch beneficiary list';
         state.data = null;
+      })
+      .addCase(sendMoney.pending, (state) => {
+        state.sendMoneyLoading = true;
+        state.sendMoneyError = '';
+      })
+      .addCase(sendMoney.fulfilled, (state, action) => {
+        state.sendMoneyLoading = false;
+        state.sendMoneyError = '';
+        state.sendMoneyData = action.payload;
+      })
+      .addCase(sendMoney.rejected, (state, action) => {
+        state.sendMoneyLoading = false;
+        state.sendMoneyError = action.error.message || 'Failed to send money';
+        state.sendMoneyData = null;
       });
   },
 });

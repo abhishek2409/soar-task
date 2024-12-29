@@ -20,7 +20,7 @@ export const BalanceHistory = () => {
       {isLoading && <Loader type={LoaderType.CHART_SHIMMER} />}
 
       {!!data?.length && !isLoading && (
-        <div className="flex    grow bg-white rounded-units-unit-25  md:p-units-unit-26">
+        <div className="flex    grow bg-white rounded-units-unit-25  xl:p-units-unit-26">
           <BalanceHistoryChart data={data} />
         </div>
       )}
