@@ -12,6 +12,7 @@ interface CustomLinkProps {
     active?: string;
     inactive?: string;
   };
+  tabIndex?: number;
 }
 
 const CustomLink: FC<CustomLinkProps> = ({
@@ -20,6 +21,7 @@ const CustomLink: FC<CustomLinkProps> = ({
   link,
   activeBarPosition = 'left',
   className,
+  tabIndex,
 }) => {
   const location = useLocation();
   const isActive =
@@ -27,12 +29,13 @@ const CustomLink: FC<CustomLinkProps> = ({
     (link === '/settings' && location.pathname.includes('settings'));
   return (
     <NavLink
+      tabIndex={tabIndex}
       aria-label={label}
       role="link"
       to={link}
       className={({ isActive }) =>
         clsx(
-          `relative font-medium  flex items-center p-2    hover:text-menuActive group  ${
+          `relative font-medium  flex items-center p-2    hover:text-menuActive group focus:ring-1 focus:ring-menuActive  ${
             isActive
               ? className?.active ?? 'text-menuActive '
               : className?.inactive ?? 'text-menuInactive '
