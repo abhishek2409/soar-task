@@ -56,7 +56,7 @@ const TextInput: FC<InputProps> = ({
           onChange={onChange}
           name={name}
           className={clsx(
-            'w-full px-4 py-2 border-none text-gray-600 bg-none focus:outline-none',
+            'w-full px-4 py-2 border-none text-gray-600 bg-none focus:outline-none focus:ring-1 focus:ring-menuActive',
             {
               'pl-units-unit-60': leftIcon, // Add padding if left icon is present
               'border-red-600 text-red-600': error,

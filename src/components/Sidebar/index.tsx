@@ -47,6 +47,7 @@ const Sidebar: FC<SidebarProps> = ({ menuItems, logo }) => {
                 onClick={() => setOpen(false)}
               >
                 <CustomLink
+                  tabIndex={0}
                   icon={icon}
                   label={label}
                   link={link}
